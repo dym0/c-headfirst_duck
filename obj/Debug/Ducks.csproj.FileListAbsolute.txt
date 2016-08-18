@@ -4,3 +4,9 @@ C:\Users\dym0\Documents\Visual Studio 2013\Projects\Ducks\bin\Debug\Ducks.pdb
 C:\Users\dym0\Documents\Visual Studio 2013\Projects\Ducks\obj\Debug\Ducks.exe
 C:\Users\dym0\Documents\Visual Studio 2013\Projects\Ducks\obj\Debug\Ducks.pdb
 C:\Users\dym0\Documents\Visual Studio 2013\Projects\Ducks\obj\Debug\Ducks.csprojResolveAssemblyReference.cache
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\c-headfirst_duck\bin\Debug\Ducks.exe.config
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\c-headfirst_duck\obj\Debug\Ducks.exe
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\c-headfirst_duck\obj\Debug\Ducks.pdb
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\c-headfirst_duck\bin\Debug\Ducks.exe
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\c-headfirst_duck\bin\Debug\Ducks.pdb
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\c-headfirst_duck\obj\Debug\Ducks.csprojResolveAssemblyReference.cache

@@ -8,7 +8,24 @@ namespace Ducks
 {
     class Program
     {
-        class Duck : IComparable<Duck>
+        class Bird
+        {
+            public string Name { get; set; }
+
+            public virtual void Fly()
+            {
+                Console.WriteLine("Frrr Frrr Frrr");
+            }
+
+            public override string ToString()
+            {
+                return "Bird " + Name;
+            }
+
+
+        }
+
+        class Duck : Bird, IComparable<Duck>
         {
             public int Size;
             public KindOfDuck Kind;
@@ -36,7 +53,7 @@ namespace Ducks
 
             public override string ToString()
             {
-                return Size + " -centymetrowa kaczka " + Kind.ToString();
+                return Size + " -cm duck " + Kind.ToString();
             }
         }
 
@@ -68,12 +85,28 @@ namespace Ducks
                     return 0;
             }
         }
+
         public enum KindOfDuck
         {
             Mallard,
             Muscovy,
             Decoy
         }
+
+        
+        class Penguin : Bird
+        {
+            public override void Fly()
+            {
+                Console.WriteLine("Penguins dont fly!");
+            }
+
+            public override string ToString()
+            {
+                return "Penguin " + base.Name;
+            }
+        }
+          
 
         static void Main(string[] args)
         {
@@ -88,32 +121,42 @@ namespace Ducks
                 new Duck() { Kind = KindOfDuck.Decoy, Size = 13 }
             };
 
-            Duck[] kacuszki =  new Duck[6];
-            kacuszki.GetEnumerator()
-            DuckComparerBySize compareDuckBySize = new DuckComparerBySize();
-            DuckCompareByKind compareDuckByKind = new DuckCompareByKind();
+            IEnumerable<Bird> upcastDuck = ducks;
            
 
+            DuckComparerBySize compareDuckBySize = new DuckComparerBySize();
+            DuckCompareByKind compareDuckByKind = new DuckCompareByKind();
 
 
-            foreach(Duck duck in ducks)
+
+
+         
+
+            List<Bird> birds = new List<Bird>();
+            birds.AddRange(upcastDuck);
+
+            birds.Add( new Bird() { Name = "Rajski Ptak" });
+            birds.Add(new Penguin() { Name = "Kowalski" });
+
+            foreach (Bird bird in birds)
             {
-                Console.WriteLine(duck);
+                Console.WriteLine(bird);
 
 
             }
 
-            ducks.Sort(compareDuckBySize);
-            ducks.Sort(compareDuckByKind);
-            Console.WriteLine(" Posortowane kaczki ");
-            foreach (Duck duck in ducks)
-            {
-                Console.WriteLine(duck);
+            ////ducks.Sort(compareDuckBySize);
+            ////ducks.Sort(compareDuckByKind);
+            ////Console.WriteLine("Sorted ducks ");
+
+            //foreach (Duck duck in ducks)
+            //{
+            //    Console.WriteLine(duck);
 
 
-            }
-            
-           Console.ReadKey();
+            //}
+
+            Console.ReadKey();
         }
     }
 }
